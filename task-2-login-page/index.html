@@ -1,9 +1,54 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 2 Log In Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="index.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Task 2 Log In Page</h1>
+    <div class="logo">
+        <img src="assets/bng-logo.png" alt="BNG Logo" class="logo-img">
+    </div>
+
+
+    <div class="login-container">
+        <div class="login-form">
+            <div class="login-header">
+                <i class='bx bx-user user-icon'></i>
+                <span class="header-text">User Login</span>
+            </div>
+
+            <div class="form-content">
+                <p class="form-description">Enter your username and password</p>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <i class='bx bx-show password-toggle' id="togglePassword"></i>
+                </div>
+
+                <button type="submit" class="sign-in-btn">Sign In</button>
+            </div>
+
+            <div class="form-footer">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span class="copyright">© All Rights Reserved</span>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,268 @@
-h1 {
-    color: orange;
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("assets/fonts/lexend-deca/LexendDecaRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+font-face {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: "Lexend Deca", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: hsl(0, 0%, 100%);
+}
+
+/* White background section on the left */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100vh;
+  background: hsl(0, 0%, 96%);
+  z-index: 1;
+}
+
+/* Zebra image background section on the right */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-image: url("assets/zebra-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.logo {
+  position: absolute;
+  top: 1.5625rem;
+  left: 1.5625rem;
+  z-index: 10;
+}
+
+.logo-img {
+  height: 2.5rem;
+  width: auto;
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 21.875rem;
+}
+
+.login-form {
+  background: hsl(0, 0%, 100%);
+  border-radius: 0;
+  box-shadow: 0 0.25rem 0.9375rem hsla(0, 0%, 0%, 0.15);
+  overflow: hidden;
+  width: 100%;
+}
+
+.login-header {
+  background: hsl(130, 75%, 49%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.user-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+  background: hsl(210, 22%, 49%);
+  border-radius: 0;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.header-text {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 2.1875rem;
+}
+
+.form-content {
+  padding: 1.25rem 1.25rem 1.25rem;
+}
+
+.form-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form-description {
+  color: hsl(0, 0%, 40%);
+  font-size: 0.8125rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.input-group {
+  margin-bottom: 0.9375rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.input-group label {
+  float: left;
+  color: hsl(0, 0%, 20%);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  width: 30%;
+  padding-left: 0.625rem;
+  text-align: left;
+  line-height: 2.25rem;
+}
+
+.input-group input {
+  float: right;
+  width: 70%;
+  padding: 0.5rem 0.75rem;
+  border: 0.0625rem solid hsl(0, 0%, 87%);
+  border-radius: 0.1875rem;
+  font-size: 0.8125rem;
+  background: hsl(48, 100%, 90%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: hsl(145, 63%, 42%);
+  box-shadow: 0 0 0 0.125rem hsla(145, 63%, 42%, 0.1);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem;
+  color: hsl(0, 0%, 60%);
+  transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: hsl(0, 0%, 40%);
+}
+
+.sign-in-btn {
+  width: auto;
+  background: hsl(210, 22%, 49%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.1875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.9375rem;
+  float: right;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sign-in-btn:hover {
+  background: hsl(210, 22%, 44%);
+  transform: translateY(-0.0625rem);
+}
+
+.sign-in-btn:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  background: hsl(0, 0%, 94%);
+  height: 2rem;
+  width: 100%;
+  border-top: 1px solid hsl(0, 0%, 87%);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 2rem;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 10;
+  padding: 0.5rem 0.5rem;
+}
+
+.copyright {
+  color: hsl(0, 0%, 0%);
+  font-size: 0.6875rem;
+  text-shadow: none;
+}
+
+@media (max-width: 48rem) {
+  body::before {
+    width: 100%;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .logo {
+    top: 1.25rem;
+    left: 1.25rem;
+  }
+
+  .login-container {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 21.875rem;
+  }
+
+  .form-content {
+    padding: 1.25rem;
+  }
+
+  .footer {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .login-container {
+    width: 18.75rem;
+  }
+
+  .logo-img {
+    height: 1.875rem;
+  }
 }

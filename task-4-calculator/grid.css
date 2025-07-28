@@ -1,0 +1,123 @@
+/* Grid Layout Implementation */
+/* This file overrides the flexbox keypad layout with CSS Grid */
+
+.keypad {
+  background: var(--bg-toggle);
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 4rem);
+  gap: 1rem;
+}
+
+.key {
+  border: none;
+  border-radius: 0.625rem;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid positioning for specific keys */
+.key[data-number="7"] { grid-area: 1 / 1; }
+.key[data-number="8"] { grid-area: 1 / 2; }
+.key[data-number="9"] { grid-area: 1 / 3; }
+.key[data-action="delete"] { grid-area: 1 / 4; }
+
+.key[data-number="4"] { grid-area: 2 / 1; }
+.key[data-number="5"] { grid-area: 2 / 2; }
+.key[data-number="6"] { grid-area: 2 / 3; }
+.key[data-operator="+"] { grid-area: 2 / 4; }
+
+.key[data-number="1"] { grid-area: 3 / 1; }
+.key[data-number="2"] { grid-area: 3 / 2; }
+.key[data-number="3"] { grid-area: 3 / 3; }
+.key[data-operator="-"] { grid-area: 3 / 4; }
+
+.key[data-number="."] { grid-area: 4 / 1; }
+.key[data-number="0"] { grid-area: 4 / 2; }
+.key[data-operator="/"] { grid-area: 4 / 3; }
+.key[data-operator="*"] { grid-area: 4 / 4; }
+
+.key[data-action="reset"] { 
+  grid-area: 5 / 1 / 5 / 3; /* Spans 2 columns */
+}
+
+.key[data-action="equals"] { 
+  grid-area: 5 / 3 / 5 / 5; /* Spans 2 columns */
+}
+
+/* Key styling remains the same */
+.key.number {
+  background: var(--bg-key-number);
+  color: var(--text-primary);
+  box-shadow: 0 0.25rem 0 var(--bg-key-number-shadow);
+}
+
+.key.operator {
+  background: var(--bg-key-number);
+  color: var(--text-primary);
+  box-shadow: 0 0.25rem 0 var(--bg-key-number-shadow);
+}
+
+.key.delete {
+  background: var(--bg-key-primary);
+  color: var(--text-secondary);
+  box-shadow: 0 0.25rem 0 var(--bg-key-primary-shadow);
+  font-size: 1.25rem;
+}
+
+.key.reset {
+  background: var(--bg-key-primary);
+  color: var(--text-secondary);
+  box-shadow: 0 0.25rem 0 var(--bg-key-primary-shadow);
+  font-size: 1.25rem;
+}
+
+.key.equals {
+  background: var(--bg-key-secondary);
+  color: var(--text-accent);
+  box-shadow: 0 0.25rem 0 var(--bg-key-secondary-shadow);
+}
+
+.key:hover {
+  transform: translateY(-0.125rem);
+}
+
+.key:active {
+  transform: translateY(0.125rem);
+  box-shadow: 0 0.125rem 0 var(--bg-key-number-shadow);
+}
+
+.key.delete:active,
+.key.reset:active {
+  box-shadow: 0 0.125rem 0 var(--bg-key-primary-shadow);
+}
+
+.key.equals:active {
+  box-shadow: 0 0.125rem 0 var(--bg-key-secondary-shadow);
+}
+
+@media (max-width: 30rem) {
+  .keypad {
+    padding: 1rem;
+    gap: 0.75rem;
+    grid-template-rows: repeat(5, 3.5rem);
+  }
+  
+  .key {
+    font-size: 1.5rem;
+  }
+  
+  .key.delete,
+  .key.reset {
+    font-size: 1rem;
+  }
+}

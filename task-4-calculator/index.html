@@ -1,9 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 4 Calculator</title>
     <link href="index.css" rel="stylesheet">
+    <link href="grid.css" rel="stylesheet" disabled id="grid-css">
 </head>
+
 <body>
-    <h1>Task 4 Calculator</h1>
+    <div class="layout-switcher">
+        <button id="layout-toggle" class="layout-btn" title="Switch to Grid Layout">
+            <span class="layout-icon">⚏</span>
+        </button>
+    </div>
+
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="calculator-header">
+                <h1 class="calculator-title">calc</h1>
+                <div class="theme-switcher">
+                    <span class="theme-label">THEME</span>
+                    <div class="theme-selector">
+                        <div class="theme-numbers">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </div>
+                        <div class="theme-toggle">
+                            <input type="range" id="theme-slider" min="1" max="3" value="1" class="theme-range">
+                            <div class="theme-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display">
+                <div class="display-text" id="display">399,981</div>
+            </div>
+
+            <div class="keypad" id="keypad">
+                <button class="key number" data-number="7">7</button>
+                <button class="key number" data-number="8">8</button>
+                <button class="key number" data-number="9">9</button>
+                <button class="key delete" data-action="delete">DEL</button>
+
+                <button class="key number" data-number="4">4</button>
+                <button class="key number" data-number="5">5</button>
+                <button class="key number" data-number="6">6</button>
+                <button class="key operator" data-operator="+">+</button>
+
+                <button class="key number" data-number="1">1</button>
+                <button class="key number" data-number="2">2</button>
+                <button class="key number" data-number="3">3</button>
+                <button class="key operator" data-operator="-">-</button>
+
+                <button class="key number" data-number=".">.</button>
+                <button class="key number" data-number="0">0</button>
+                <button class="key operator" data-operator="/">/</button>
+                <button class="key operator" data-operator="*">x</button>
+
+                <button class="key reset" data-action="reset">RESET</button>
+                <button class="key equals" data-action="equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

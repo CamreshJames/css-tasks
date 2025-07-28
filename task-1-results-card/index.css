@@ -1,3 +1,278 @@
-h1 {
-    color: orange;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(221, 100%, 96%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.card-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 736px;
+  padding: 20px;
+}
+
+.results-card {
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: 0 30px 60px hsla(224, 82%, 58%, 0.15);
+  overflow: hidden;
+  width: 100%;
+  height: 512px;
+  position: relative;
+}
+
+.result-section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 368px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    hsl(252, 100%, 67%) 0%,
+    hsl(241, 81%, 54%) 100%
+  );
+  border-radius: 32px;
+  text-align: center;
+  color: white;
+  padding: 38px 54px 46px;
+}
+
+.result-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: hsl(241, 100%, 89%);
+}
+
+.score-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 1) 0%,
+    hsla(241, 72%, 46%, 0) 100%
+  );
+  margin: 0 auto 28px;
+  position: relative;
+  padding-top: 55px;
+}
+
+.score-number {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 72px;
+  color: white;
+}
+
+.score-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(241, 100%, 89%);
+  margin-top: 4px;
+}
+
+.result-status {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.result-description {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  color: hsl(241, 100%, 89%);
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.summary-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 368px;
+  height: 100%;
+  padding: 38px 40px 46px;
+}
+
+.summary-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(224, 30%, 27%);
+  margin-bottom: 28px;
+}
+
+.summary-items {
+  margin-bottom: 41px;
+}
+
+.summary-item {
+  height: 56px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  position: relative;
+  line-height: 56px;
+}
+
+.summary-item:last-child {
+  margin-bottom: 0;
+}
+
+.summary-item.reaction {
+  background-color: hsla(0, 100%, 67%, 0.05);
+}
+
+.summary-item.memory {
+  background-color: hsla(39, 100%, 56%, 0.05);
+}
+
+.summary-item.verbal {
+  background-color: hsla(166, 100%, 37%, 0.05);
+}
+
+.summary-item.visual {
+  background-color: hsla(234, 85%, 45%, 0.05);
+}
+
+.item-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.item-label {
+  position: absolute;
+  left: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.summary-item.reaction .item-label {
+  color: hsl(0, 100%, 67%);
+}
+
+.summary-item.memory .item-label {
+  color: hsl(39, 100%, 56%);
+}
+
+.summary-item.verbal .item-label {
+  color: hsl(166, 100%, 37%);
+}
+
+.summary-item.visual .item-label {
+  color: hsl(234, 85%, 45%);
+}
+
+.item-score {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(224, 30%, 27%);
+}
+
+.score-max {
+  color: hsl(224, 30%, 27%, 0.5);
+  font-weight: 700;
+}
+
+.continue-btn {
+  width: 100%;
+  height: 56px;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  border: none;
+  border-radius: 128px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(252, 100%, 67%) 0%,
+    hsl(241, 81%, 54%) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    max-width: 375px;
+    padding: 0;
+  }
+
+  .results-card {
+    height: auto;
+    border-radius: 0 0 32px 32px;
+    position: static;
+  }
+
+  .result-section {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 32px 32px;
+    padding: 24px 57px 40px;
+  }
+
+  .summary-section {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 24px 30px 30px;
+  }
+
+  .score-circle {
+    width: 140px;
+    height: 140px;
+    padding-top: 38px;
+    margin-bottom: 24px;
+  }
+
+  .score-number {
+    font-size: 56px;
+    line-height: 56px;
+  }
+
+  .result-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .result-status {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .result-description {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .summary-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
 }
