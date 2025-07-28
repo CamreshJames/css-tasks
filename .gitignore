@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __pycache__/
 *.py[cod]
 *.pyo
@@ -43,3 +44,6 @@ logs/
 .svelte-kit/
 .svelte-kit/*
 .svelte-kit/output/
+=======
+.idea
+>>>>>>> be16ce4b9b01829e8ac8a570a9b496295eb378c2
