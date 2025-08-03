@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# css-tasks 
-=======
 # CSS Tasks
 
 ## Overview
@@ -16,4 +13,3 @@ Complete the tasks testing different CSS Concepts
 2. Login Page Interface
 3. Mortgage Calculator Modal
 4. Calculator (Flexbox vs Grid)
->>>>>>> be16ce4b9b01829e8ac8a570a9b496295eb378c2

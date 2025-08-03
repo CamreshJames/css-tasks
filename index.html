@@ -1,22 +1,300 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>CSS Tasks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Tasks Portfolio</title>
+    <style>
+        @font-face {
+            font-family: 'Lexend Deca';
+            src: url('assets/fonts/lexend-deca/LexendDecaRegular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+            padding: 3rem;
+            width: 100%;
+            max-width: 60rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .task-card {
+            background: #f8f9fa;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 0.125rem solid transparent;
+            text-decoration: none;
+            color: inherit;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .task-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+
+        .task-number {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .task-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .task-tech {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 0.0625rem solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<main>
-    <header>
-        <h1>CSS Tasks</h1>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1>CSS Grid Tasks Portfolio</h1>
+            <p>A collection of modern web components built with CSS Grid and best practices</p>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="task-1-results-card/index.html">Task 1 Results Card</a></li>
-            <li><a href="task-2-login-page/index.html">Task 2 Log In</a></li>
-            <li><a href="task-3-mortgage-calculator/index.html">Task 3 Mortgage Calculator</a></li>
-            <li><a href="task-4-calculator/index.html">Task 4 Calculator</a></li>
-        </ul>
-    </nav>
-</main>
+        <nav class="tasks-grid">
+            <a href="task-1-results-card/index.html" class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-info">
+                    <h3>Results Card</h3>
+                    <p>Interactive results summary card with gradient backgrounds and responsive design</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Flexbox</span>
+                        <span class="tech-tag">HSL</span>
+                    </div>
+                </div>
+            </a>
 
+            <a href="task-2-login-page/index.html" class="task-card">
+                <div class="task-number">2</div>
+                <div class="task-info">
+                    <h3>Login Page</h3>
+                    <p>Professional login interface with background image and form validation styling</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Forms</span>
+                        <span class="tech-tag">REM</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-3-mortgage-calculator/index.html" class="task-card">
+                <div class="task-number">3</div>
+                <div class="task-info">
+                    <h3>Mortgage Calculator</h3>
+                    <p>Financial calculator with interactive forms and responsive two-column layout</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Forms</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-4-calculator/index.html" class="task-card">
+                <div class="task-number">4</div>
+                <div class="task-info">
+                    <h3>Calculator</h3>
+                    <p>Multi-theme calculator with CSS custom properties and interactive keypad</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Themes</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-5-contact-form/index.html" class="task-card">
+                <div class="task-number">5</div>
+                <div class="task-info">
+                    <h3>Contact Form</h3>
+                    <p>Modern contact form with gradient backgrounds and grid-based layout</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Forms</span>
+                        <span class="tech-tag">Gradient</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-6-chat-input/index.html" class="task-card">
+                <div class="task-number">6</div>
+                <div class="task-info">
+                    <h3>Chat Input</h3>
+                    <p>Social media style chat input with action buttons and emoji support</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">SVG</span>
+                        <span class="tech-tag">Interactive</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-7-layouts/index.html" class="task-card">
+                <div class="task-number">7</div>
+                <div class="task-info">
+                    <h3>Layout Showcase</h3>
+                    <p>Interactive sliding showcase of different CSS Grid layout patterns</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Animation</span>
+                        <span class="tech-tag">JS</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-8-image-gallery/index.html" class="task-card">
+                <div class="task-number">8</div>
+                <div class="task-info">
+                    <h3>Image Gallery</h3>
+                    <p>Masonry-style image gallery with CSS Grid areas and background images</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Images</span>
+                        <span class="tech-tag">Masonry</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-9-calendar/index.html" class="task-card">
+                <div class="task-number">9</div>
+                <div class="task-info">
+                    <h3>Calendar</h3>
+                    <p>Monthly calendar view with navigation controls and date highlighting</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Calendar</span>
+                        <span class="tech-tag">UI</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="task-10-chat/index.html" class="task-card">
+                <div class="task-number">10</div>
+                <div class="task-info">
+                    <h3>Chat Interface</h3>
+                    <p>Professional messaging interface with sidebar navigation and real-time chat</p>
+                    <div class="task-tech">
+                        <span class="tech-tag">Grid</span>
+                        <span class="tech-tag">Chat</span>
+                        <span class="tech-tag">Boxicons</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+
+        <footer class="footer">
+            <p>Built with CSS Grid, Lexend Deca font, and modern web standards</p>
+        </footer>
+    </div>
 </body>
+
 </html>

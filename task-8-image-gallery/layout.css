@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../assets/fonts/lexend-deca/LexendDecaRegular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery1 {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    "img1 img2 img3 img4 img5"
+    "img6 img6 img6 img6 img6"
+    "img7 img8 img9 img10 img11";
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Assign each image to its grid area */
+.gallery1 .img1 {
+  grid-area: img1;
+}
+.gallery1 .img2 {
+  grid-area: img2;
+}
+.gallery1 .img3 {
+  grid-area: img3;
+}
+.gallery1 .img4 {
+  grid-area: img4;
+}
+.gallery1 .img5 {
+  grid-area: img5;
+}
+.gallery1 .img6 {
+  grid-area: img6;
+}
+.gallery1 .img7 {
+  grid-area: img7;
+}
+.gallery1 .img8 {
+  grid-area: img8;
+}
+.gallery1 .img9 {
+  grid-area: img9;
+}
+.gallery1 .img10 {
+  grid-area: img10;
+}
+.gallery1 .img11 {
+  grid-area: img11;
+}
+
+.gallery1 .img6 {
+  max-height: 329px;
+}
+
+/* Image styling for gallery1 only */
+.gallery1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-height: 500px) {
+  .gallery1 {
+    grid-template-rows: 1fr 1.2fr 1fr;
+  }
+}
+
+.gallery2 {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "img_1_1 img_1_2 img_1_2 img_1_2 img_1_3"
+    "img_1_4 img_1_2 img_1_2 img_1_2 img_1_5"
+    "img_1_6 img_1_7 img_1_8 img_1_9 img_1_10";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Assign each image to its grid area */
+.gallery2 .img_1_1 {
+  grid-area: img_1_1;
+}
+.gallery2 .img_1_2 {
+  grid-area: img_1_2;
+}
+.gallery2 .img_1_3 {
+  grid-area: img_1_3;
+}
+.gallery2 .img_1_4 {
+  grid-area: img_1_4;
+}
+.gallery2 .img_1_5 {
+  grid-area: img_1_5;
+}
+.gallery2 .img_1_6 {
+  grid-area: img_1_6;
+}
+.gallery2 .img_1_7 {
+  grid-area: img_1_7;
+}
+.gallery2 .img_1_8 {
+  grid-area: img_1_8;
+}
+.gallery2 .img_1_9 {
+  grid-area: img_1_9;
+}
+.gallery2 .img_1_10 {
+  grid-area: img_1_10;
+}
+
+/* Image styling for gallery2 only */
+.img_1 .gallery2 {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.img_1_2 {
+  height: 500px;
+}
+.img_1_4 {
+  height: 200px;
+}
+
+@media (max-height: 500px) {
+  .gallery2 {
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+}

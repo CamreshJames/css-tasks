@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('../assets/fonts/lexend-deca/LexendDecaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +16,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Lexend Deca', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: hsl(221, 100%, 96%);
   min-height: 100vh;
   position: relative;
@@ -17,7 +28,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 736px;
+  max-width: 920px;
   padding: 20px;
 }
 
@@ -27,7 +38,7 @@ body {
   box-shadow: 0 30px 60px hsla(224, 82%, 58%, 0.15);
   overflow: hidden;
   width: 100%;
-  height: 512px;
+  height: 580px;
   position: relative;
 }
 
@@ -35,7 +46,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 368px;
+  width: 460px;
   height: 100%;
   background: linear-gradient(
     180deg,
@@ -45,28 +56,28 @@ body {
   border-radius: 32px;
   text-align: center;
   color: white;
-  padding: 38px 54px 46px;
+  padding: 48px 64px 56px;
 }
 
 .result-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
   color: hsl(241, 100%, 89%);
 }
 
 .score-circle {
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   background: linear-gradient(
     180deg,
     hsla(256, 72%, 46%, 1) 0%,
     hsla(241, 72%, 46%, 0) 100%
   );
-  margin: 0 auto 28px;
+  margin: 0 auto 32px;
   position: relative;
-  padding-top: 55px;
+  padding-top: 65px;
 }
 
 .score-number {
@@ -103,29 +114,30 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  width: 368px;
+  width: 460px;
   height: 100%;
-  padding: 38px 40px 46px;
+  padding: 48px 50px 56px;
 }
 
 .summary-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: hsl(224, 30%, 27%);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+  margin-left: 12px;
 }
 
 .summary-items {
-  margin-bottom: 41px;
+  margin-bottom: 48px;
 }
 
 .summary-item {
-  height: 56px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  padding: 0 16px;
+  height: 64px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  padding: 0 20px;
   position: relative;
-  line-height: 56px;
+  line-height: 64px;
 }
 
 .summary-item:last-child {
@@ -150,18 +162,18 @@ body {
 
 .item-icon {
   position: absolute;
-  left: 16px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .item-label {
   position: absolute;
-  left: 52px;
+  left: 58px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
 }
 
@@ -183,10 +195,10 @@ body {
 
 .item-score {
   position: absolute;
-  right: 16px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   color: hsl(224, 30%, 27%);
 }
@@ -198,14 +210,15 @@ body {
 
 .continue-btn {
   width: 100%;
-  height: 56px;
+  height: 64px;
   background-color: hsl(224, 30%, 27%);
   color: white;
   border: none;
   border-radius: 128px;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   cursor: pointer;
+  margin-left: 12px;
   transition: background-color 0.3s ease;
 }
 

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10: Chat Interface</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-app">
+        <!-- Top Header -->
+        <header class="app-header">
+            <div class="logo">
+                <h2>JOIN</h2>
+            </div>
+            <div class="search-bar">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search for jobs, candidates...">
+            </div>
+            <div class="header-actions">
+                <button class="create-job-btn">
+                    <i class='bx bx-plus'></i>
+                    Create new job
+                </button>
+                <i class='bx bx-bell notification-icon'></i>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/32" alt="Julian H.">
+                    <span>Julian H.</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <div class="nav-item active">
+                        <i class='bx bx-home'></i>
+                        <span>Fintory</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class='bx bx-grid-alt'></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class='bx bx-briefcase'></i>
+                        <span>Jobs</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class='bx bx-user'></i>
+                        <span>Candidates</span>
+                    </div>
+                    <div class="nav-item active">
+                        <i class='bx bx-message-dots'></i>
+                        <span>Messages</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class='bx bx-building'></i>
+                        <span>Company</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class='bx bx-cog'></i>
+                        <span>Settings</span>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Messages Panel -->
+            <div class="messages-panel">
+                <div class="messages-header">
+                    <h3>Messages <span class="count">25</span></h3>
+                    <div class="messages-search">
+                        <i class='bx bx-search'></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="filter-dropdown">
+                        <span>All Messages</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+
+                <div class="messages-list">
+                    <div class="message-item active">
+                        <div class="avatar">JH</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="name">Julian H.</span>
+                                <span class="time">2h ago</span>
+                            </div>
+                            <div class="role">applied for UI / UX Designer</div>
+                            <div class="preview">Julian Herbst: Hi, I have a quick question regarding my application on the open...</div>
+                        </div>
+                        <div class="unread-indicator"></div>
+                    </div>
+
+                    <div class="message-item">
+                        <div class="avatar">RJ</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="name">Ramona J.</span>
+                                <span class="time">12h ago</span>
+                            </div>
+                            <div class="role">applied for UI / UX Designer</div>
+                            <div class="preview">Lena Nettke: Hi Ramona, we just reviewed your application and we're happy to...</div>
+                        </div>
+                        <div class="unread-indicator"></div>
+                    </div>
+
+                    <div class="message-item">
+                        <div class="avatar">DW</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="name">Dominik W.</span>
+                                <span class="time">2 days ago</span>
+                            </div>
+                            <div class="role">applied for Teamlead Design</div>
+                            <div class="preview">Lena Nettke: Hi Dominik, we just reviewed your application and we're happy to...</div>
+                        </div>
+                    </div>
+
+                    <div class="message-item">
+                        <div class="avatar">KM</div>
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="name">Kevin M.</span>
+                                <span class="time">2 days ago</span>
+                            </div>
+                            <div class="role">applied for A very very long position title</div>
+                            <div class="preview">Kevin Meyerle: Good morning, I just wanted to share my design challenge results...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <div class="avatar">JH</div>
+                        <div class="user-details">
+                            <h4>Julian Herbst</h4>
+                            <span>applied for UI / UX Designer</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="action-btn">View Profile</button>
+                        <div class="dropdown">
+                            <span>Applied</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-x'></i>
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </div>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="date-separator">09.03.20</div>
+                    
+                    <div class="message sent">
+                        <div class="avatar">JH</div>
+                        <div class="message-bubble">
+                            <div class="sender-name">Julian Herbst</div>
+                            <div class="message-text">
+                                Hi Lena, I have a quick question regarding my application on the open position „UI / UX Designer".
+                                <br><br>
+                                How long does it usually take for you to review a application? I have some options right now but I would like to consider your company as well but I have no response since I applied. Please just give me a quick message.
+                                <br><br>
+                                Thanks and best regards,<br>
+                                Julian Herbst
+                            </div>
+                            <div class="message-time">Message sent 1 week ago</div>
+                        </div>
+                    </div>
+
+                    <div class="date-separator">Today</div>
+
+                    <div class="message received">
+                        <div class="message-bubble">
+                            <div class="message-text">
+                                Hi Julian,<br>
+                                sorry for the delayed response but we're currently really busy screening a lot of new candidates. So to answer your question: Usually we need around 1 week to review the applications and I just took a look into yours.
+                                <br><br>
+                                We like what we see and would like to send you our Design Challenge – that's the way we see how qualified you are. The timeframe is a normal working day (~8 hours).
+                                <br><br>
+                                Please finish it within the next 7 days. If you have any questions feel free to message me here.
+                            </div>
+                            <div class="message-time">Message sent just now</div>
+                        </div>
+                        <div class="avatar">LN</div>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <div class="input-container">
+                        <input type="text" placeholder="Write your message">
+                        <div class="input-actions">
+                            <i class='bx bx-paperclip'></i>
+                            <i class='bx bx-bold'></i>
+                            <i class='bx bx-italic'></i>
+                            <i class='bx bx-list-ul'></i>
+                            <i class='bx bx-list-ol'></i>
+                            <i class='bx bx-link'></i>
+                            <i class='bx bx-smile'></i>
+                            <i class='bx bx-dots-horizontal-rounded'></i>
+                        </div>
+                    </div>
+                    <button class="send-btn">
+                        Send
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

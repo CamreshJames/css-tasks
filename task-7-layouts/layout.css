@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../assets/fonts/lexend-deca/LexendDecaRegular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  height: 100vh;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.section {
+  padding: 1rem;
+  display: grid;
+  place-items: left;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Layout 1: Green theme - Ads left, Nav bottom-left */
+.img {
+  grid-template-areas:
+    "header header header"
+    "nav article ads"
+    "nav footer footer";
+  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.img .section {
+  background: #ffd706;
+}
+
+.img .header {
+  grid-area: header;
+}
+.img .ads {
+  grid-area: ads;
+}
+.img .article {
+  grid-area: article;
+}
+.img .nav {
+  grid-area: nav;
+}
+.img .footer {
+  grid-area: footer;
+}
+/* *img_2: Green theme - Nav left, Ads bottom-left */
+.img_2 {
+  grid-template-areas:
+    "nav header header"
+    "nav article article"
+    "nav article article"
+    "nav ads ads"
+    "nav footer footer";
+  grid-template-rows: 4rem 1fr 1fr 3rem 3rem;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+.img_2 .section {
+  background: #9ace30;
+}
+
+.img_2 .nav {
+  grid-area: nav;
+}
+.img_2 .header {
+  grid-area: header;
+}
+.img_2 .article {
+  grid-area: article;
+}
+.img_2 .ads {
+  grid-area: ads;
+}
+.img_2 .footer {
+  grid-area: footer;
+}
+
+/*img_1: Yellow theme - Nav left, Ads right */
+.img_1 {
+  grid-template-areas:
+    "header header header"
+    "nav article ads"
+    "nav article ads"
+    "footer footer footer";
+  grid-template-rows: 5rem 1fr 1fr 4rem;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.img_1 .section {
+  background: #ffd706;
+}
+
+.img_1 .header {
+  grid-area: header;
+}
+.img_1 .nav {
+  grid-area: nav;
+}
+.img_1 .article {
+  grid-area: article;
+}
+.img_1 .ads {
+  grid-area: ads;
+}
+.img_1 .footer {
+  grid-area: footer;
+}
+
+/* img_3: Yellow theme - Nav left, Footer bottom-right */
+.img_3{
+  grid-template-areas:
+    "header header header"
+    "ads article article"
+    "nav article article"
+    "nav footer footer";
+  grid-template-rows: 4rem 8rem 1fr 4rem;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.img_3 .section {
+  background: #9ace30;
+}
+
+.img_3 .header {
+  grid-area: header;
+}
+.img_3 .nav {
+  grid-area: nav;
+}
+.img_3 .article {
+  grid-area: article;
+}
+.img_3 .ads {
+  grid-area: ads;
+}
+.img_3 .footer {
+  grid-area: footer;
+}
