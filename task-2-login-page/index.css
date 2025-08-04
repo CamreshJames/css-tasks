@@ -96,7 +96,7 @@ body::after {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3rem;
+  width: 4rem;
   font-size: 1rem;
   color: hsl(0, 0%, 100%);
   background: hsl(210, 22%, 49%);
