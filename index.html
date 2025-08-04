@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Tasks Portfolio</title>
+    <title>CSS Grid Tasks - Futuristic Portfolio</title>
     <style>
         @font-face {
             font-family: 'Lexend Deca';
@@ -13,266 +12,394 @@
             font-style: normal;
         }
 
-        html {
-            font-size: 16px;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 2rem;
+        html, body {
+            height: 100%;
+            overflow: hidden;
         }
 
-        .container {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-            padding: 3rem;
-            width: 100%;
-            max-width: 60rem;
+        body {
+            font-family: 'Lexend Deca', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
         }
 
         .header {
+            padding: 2rem 3rem 1rem;
             text-align: center;
-            margin-bottom: 3rem;
+            background: rgba(15, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1a1a2e;
         }
 
         .header h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00d4ff;
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+            to { text-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
         }
 
         .header p {
-            color: #6c757d;
+            color: #8892b0;
             font-size: 1.1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            padding: 2rem 3rem;
+            overflow: hidden;
         }
 
         .tasks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 1.5rem;
+            height: 100%;
+            max-height: calc(100vh - 200px);
         }
 
         .task-card {
-            background: #f8f9fa;
-            border-radius: 0.75rem;
+            background: #16213e;
+            border: 1px solid #1a1a2e;
+            border-radius: 12px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 0.125rem solid transparent;
             text-decoration: none;
             color: inherit;
-            display: grid;
-            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .task-card:nth-child(1) { animation-delay: 0.1s; }
+        .task-card:nth-child(2) { animation-delay: 0.2s; }
+        .task-card:nth-child(3) { animation-delay: 0.3s; }
+        .task-card:nth-child(4) { animation-delay: 0.4s; }
+        .task-card:nth-child(5) { animation-delay: 0.5s; }
+        .task-card:nth-child(6) { animation-delay: 0.6s; }
+        .task-card:nth-child(7) { animation-delay: 0.7s; }
+        .task-card:nth-child(8) { animation-delay: 0.8s; }
+        .task-card:nth-child(9) { animation-delay: 0.9s; }
+        .task-card:nth-child(10) { animation-delay: 1s; }
+
+        @keyframes slideInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .task-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .task-card:hover::before {
+            left: 100%;
         }
 
         .task-card:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            border-color: #667eea;
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00d4ff;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(0, 212, 255, 0.2);
         }
 
         .task-number {
             width: 3rem;
             height: 3rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 50%;
+            background: #0f3460;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            border-radius: 8px;
             display: grid;
             place-items: center;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .task-card:hover .task-number {
+            background: #00d4ff;
+            color: #0a0a0f;
+            transform: rotate(360deg);
         }
 
         .task-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #212529;
+            color: #ffffff;
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .task-card:hover .task-info h3 {
+            color: #00d4ff;
         }
 
         .task-info p {
-            color: #6c757d;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: #8892b0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
         }
 
         .task-tech {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
         }
 
         .tech-tag {
-            background: #e9ecef;
-            color: #495057;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
+            background: #0f3460;
+            color: #64ffda;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
             font-weight: 500;
-            text-align: center;
+            border: 1px solid #1a1a2e;
+            transition: all 0.3s ease;
+        }
+
+        .task-card:hover .tech-tag {
+            background: #64ffda;
+            color: #0a0a0f;
+            transform: translateY(-2px);
         }
 
         .footer {
+            padding: 1rem 3rem;
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 0.0625rem solid #e9ecef;
-            color: #6c757d;
+            background: rgba(15, 15, 25, 0.8);
+            border-top: 1px solid #1a1a2e;
+            color: #8892b0;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-            }
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
 
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00d4ff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 2.5s; }
+
+        @media (max-width: 1200px) {
+            .tasks-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+            
+            .task-card:nth-child(10) {
+                grid-column: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header, .main-content, .footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .tasks-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+            
             .header h1 {
                 font-size: 2rem;
-            }
-
-            .tasks-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>CSS Grid Tasks Portfolio</h1>
-            <p>A collection of modern web components built with CSS Grid and best practices</p>
-        </header>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
+    <header class="header">
+        <h1>CSS Grid Tasks</h1>
+        <p>Futuristic web components built with modern CSS Grid techniques</p>
+    </header>
+
+    <main class="main-content">
         <nav class="tasks-grid">
             <a href="task-1-results-card/index.html" class="task-card">
-                <div class="task-number">1</div>
+                <div class="task-number">01</div>
                 <div class="task-info">
                     <h3>Results Card</h3>
-                    <p>Interactive results summary card with gradient backgrounds and responsive design</p>
+                    <p>Interactive summary with score visualization</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
-                        <span class="tech-tag">Flexbox</span>
                         <span class="tech-tag">HSL</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-2-login-page/index.html" class="task-card">
-                <div class="task-number">2</div>
+                <div class="task-number">02</div>
                 <div class="task-info">
-                    <h3>Login Page</h3>
-                    <p>Professional login interface with background image and form validation styling</p>
+                    <h3>Login Interface</h3>
+                    <p>Professional authentication form</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Forms</span>
-                        <span class="tech-tag">REM</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-3-mortgage-calculator/index.html" class="task-card">
-                <div class="task-number">3</div>
+                <div class="task-number">03</div>
                 <div class="task-info">
                     <h3>Mortgage Calculator</h3>
-                    <p>Financial calculator with interactive forms and responsive two-column layout</p>
+                    <p>Financial calculation interface</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
-                        <span class="tech-tag">Forms</span>
                         <span class="tech-tag">JS</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-4-calculator/index.html" class="task-card">
-                <div class="task-number">4</div>
+                <div class="task-number">04</div>
                 <div class="task-info">
-                    <h3>Calculator</h3>
-                    <p>Multi-theme calculator with CSS custom properties and interactive keypad</p>
+                    <h3>Multi-Theme Calculator</h3>
+                    <p>Interactive keypad with themes</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Themes</span>
-                        <span class="tech-tag">JS</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-5-contact-form/index.html" class="task-card">
-                <div class="task-number">5</div>
+                <div class="task-number">05</div>
                 <div class="task-info">
                     <h3>Contact Form</h3>
-                    <p>Modern contact form with gradient backgrounds and grid-based layout</p>
+                    <p>Modern communication interface</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Forms</span>
-                        <span class="tech-tag">Gradient</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-6-chat-input/index.html" class="task-card">
-                <div class="task-number">6</div>
+                <div class="task-number">06</div>
                 <div class="task-info">
                     <h3>Chat Input</h3>
-                    <p>Social media style chat input with action buttons and emoji support</p>
+                    <p>Social messaging component</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">SVG</span>
-                        <span class="tech-tag">Interactive</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-7-layouts/index.html" class="task-card">
-                <div class="task-number">7</div>
+                <div class="task-number">07</div>
                 <div class="task-info">
                     <h3>Layout Showcase</h3>
-                    <p>Interactive sliding showcase of different CSS Grid layout patterns</p>
+                    <p>Interactive grid demonstrations</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Animation</span>
-                        <span class="tech-tag">JS</span>
                     </div>
                 </div>
             </a>
 
-            <a href="task-8-image-gallery/index.html" class="task-card">
-                <div class="task-number">8</div>
+            <a href="task-8-image-gallery/img_1.html" class="task-card">
+                <div class="task-number">08</div>
                 <div class="task-info">
                     <h3>Image Gallery</h3>
-                    <p>Masonry-style image gallery with CSS Grid areas and background images</p>
+                    <p>Masonry-style photo layout</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Images</span>
-                        <span class="tech-tag">Masonry</span>
                     </div>
                 </div>
             </a>
 
             <a href="task-9-calendar/index.html" class="task-card">
-                <div class="task-number">9</div>
+                <div class="task-number">09</div>
                 <div class="task-info">
-                    <h3>Calendar</h3>
-                    <p>Monthly calendar view with navigation controls and date highlighting</p>
+                    <h3>Calendar Interface</h3>
+                    <p>Monthly view with navigation</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
                         <span class="tech-tag">Calendar</span>
-                        <span class="tech-tag">UI</span>
                     </div>
                 </div>
             </a>
@@ -280,21 +407,19 @@
             <a href="task-10-chat/index.html" class="task-card">
                 <div class="task-number">10</div>
                 <div class="task-info">
-                    <h3>Chat Interface</h3>
-                    <p>Professional messaging interface with sidebar navigation and real-time chat</p>
+                    <h3>Chat Application</h3>
+                    <p>Professional messaging platform</p>
                     <div class="task-tech">
                         <span class="tech-tag">Grid</span>
-                        <span class="tech-tag">Chat</span>
-                        <span class="tech-tag">Boxicons</span>
+                        <span class="tech-tag">Complex</span>
                     </div>
                 </div>
             </a>
         </nav>
+    </main>
 
-        <footer class="footer">
-            <p>Built with CSS Grid, Lexend Deca font, and modern web standards</p>
-        </footer>
-    </div>
+    <footer class="footer">
+        <p>Advanced CSS Grid implementations with modern web standards</p>
+    </footer>
 </body>
-
 </html>
