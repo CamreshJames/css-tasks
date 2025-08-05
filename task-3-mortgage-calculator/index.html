@@ -1,83 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 3 Mortgage Calculator</title>
+    <title>Task 3 Mortgage Calculator Modal</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="index.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="calculator-container">
-        <div class="calculator-card">
-            <div class="form-section">
-                <div class="form-header">
-                    <h1 class="form-title">Mortgage Calculator</h1>
-                    <button class="clear-btn">Clear All</button>
+    <!-- Page content with trigger button -->
+    <div class="page-content">
+        <h1>Mortgage Calculator</h1>
+        <p>Click the button below to open the mortgage calculator in a modal.</p>
+        <button class="open-modal-btn">
+            <i class='bx bx-calculator'></i>
+            Open Mortgage Calculator
+        </button>
+    </div>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="calculator-container">
+            <div class="calculator-card">
+                <div class="form-section">
+                    <div class="form-header">
+                        <h1 class="form-title">Mortgage Calculator</h1>
+                        <button class="clear-btn">Clear All</button>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="input-group">
+                            <label for="mortgage-amount">Mortgage Amount</label>
+                            <div class="input-wrapper">
+                                <span class="currency-symbol">£</span>
+                                <input type="number" id="mortgage-amount" name="mortgage-amount" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group half-width">
+                                <label for="mortgage-term">Mortgage Term</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="mortgage-term" name="mortgage-term" placeholder="">
+                                    <span class="input-suffix">years</span>
+                                </div>
+                            </div>
+
+                            <div class="input-group half-width">
+                                <label for="interest-rate">Interest Rate</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="interest-rate" name="interest-rate" step="0.01"
+                                        placeholder="">
+                                    <span class="input-suffix">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <label class="radio-label">Mortgage Type</label>
+
+                            <div class="radio-option">
+                                <input type="radio" id="repayment" name="mortgage-type" value="repayment" checked>
+                                <label for="repayment" class="radio-text">Repayment</label>
+                            </div>
+
+                            <div class="radio-option">
+                                <input type="radio" id="interest-only" name="mortgage-type" value="interest-only">
+                                <label for="interest-only" class="radio-text">Interest Only</label>
+                            </div>
+                        </div>
+
+                        <button class="calculate-btn">
+                            <i class='bx bx-calculator'></i>
+                            Calculate Repayments
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="form-content">
-                    <div class="input-group">
-                        <label for="mortgage-amount">Mortgage Amount</label>
-                        <div class="input-wrapper">
-                            <span class="currency-symbol">£</span>
-                            <input type="number" id="mortgage-amount" name="mortgage-amount" placeholder="">
-                        </div>
-                    </div>
-                    
-                    <div class="input-row">
-                        <div class="input-group half-width">
-                            <label for="mortgage-term">Mortgage Term</label>
-                            <div class="input-wrapper">
-                                <input type="number" id="mortgage-term" name="mortgage-term" placeholder="">
-                                <span class="input-suffix">years</span>
-                            </div>
-                        </div>
-                        
-                        <div class="input-group half-width">
-                            <label for="interest-rate">Interest Rate</label>
-                            <div class="input-wrapper">
-                                <input type="number" id="interest-rate" name="interest-rate" step="0.01" placeholder="">
-                                <span class="input-suffix">%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="radio-group">
-                        <label class="radio-label">Mortgage Type</label>
-                        
-                        <div class="radio-option">
-                            <input type="radio" id="repayment" name="mortgage-type" value="repayment" checked>
-                            <label for="repayment" class="radio-text">Repayment</label>
-                        </div>
-                        
-                        <div class="radio-option">
-                            <input type="radio" id="interest-only" name="mortgage-type" value="interest-only">
-                            <label for="interest-only" class="radio-text">Interest Only</label>
-                        </div>
-                    </div>
-                    
-                    <button class="calculate-btn">
-                        <i class='bx bx-calculator'></i>
-                        Calculate Repayments
+
+                <div class="results-section">
+                    <button class="close-modal-btn" id="close-modal-btn">
+                        <i class='bx bx-x'></i>
                     </button>
-                </div>
-            </div>
-            
-            <div class="results-section">
-                <div class="results-content">
-                    <div class="results-illustration">
-                        <img src="assets/image.png" alt="Calculator illustration" class="calculator-image">
+                    <div class="results-content">
+                        <div class="results-illustration">
+                            <img src="assets/image.png" alt="Calculator illustration" class="calculator-image">
+                        </div>
+                        <h2 class="results-title">Results shown here</h2>
+                        <p class="results-description">
+                            Complete the form and click "calculate repayments" to see what your monthly repayments would
+                            be.
+                        </p>
                     </div>
-                    <h2 class="results-title">Results shown here</h2>
-                    <p class="results-description">
-                        Complete the form and click "calculate repayments" to see what your monthly repayments would be.
-                    </p>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>
