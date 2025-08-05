@@ -387,6 +387,11 @@ body {
 
 .message.received {
     grid-template-columns:  auto 1fr;
+    padding-left: 5rem;
+}
+
+bg-blue{
+    background: #e8f4fd;
 }
 
 .message-bubble {
