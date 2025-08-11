@@ -100,6 +100,7 @@ body {
     font-size: 1rem;
     background: white;
     transition: border-color 0.2s ease;
+    appearance: none;
 }
 
 .form-group input:focus,

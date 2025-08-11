@@ -83,13 +83,21 @@ body {
   max-height: 329px;
 }
 
-/* Image styling for gallery1 only */
-.gallery1 img {
+/* Gallery item styling for gallery1 */
+.gallery1 .gallery-item {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px solid #888888;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery1 .gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-height: 500px) {

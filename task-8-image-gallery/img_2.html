@@ -1,94 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>img_2</title>
     <style>
-      @font-face {
-          font-family: "Lexend Deca";
-          src: url("../assets/fonts/lexend-deca/LexendDecaRegular.ttf") format("truetype");
-          font-weight: normal;
-          font-style: normal;
-      }
+        @font-face {
+            font-family: "Lexend Deca";
+            src: url("../assets/fonts/lexend-deca/LexendDecaRegular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
 
-      html, body {
-          height: 100%;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          font-size: 16px;
-      }
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
 
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      body {
-          font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          display: grid;
-          place-items: center;
-      }
+        body {
+            font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: grid;
+            place-items: center;
+        }
 
-      .gallery3 {
-          display: grid;
-          width: 100%;
-          height: 100%;
-          grid-template-areas:
-              "img_2_1 img_2_2 img_2_2 img_2_2 img_2_3"
-              "img_2_4 img_2_2 img_2_2 img_2_2 img_2_5"
-              "img_2_6 img_2_2 img_2_2 img_2_2 img_2_7"
-              "img_2_8 img_2_9 img_2_10 img_2_11 img_2_12";
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr;
-          gap: 1rem;
-          padding: 1rem;
-          box-sizing: border-box;
-      }
+        .gallery3 {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            grid-template-areas:
+                "img_2_1 img_2_2 img_2_2 img_2_2 img_2_3"
+                "img_2_4 img_2_2 img_2_2 img_2_2 img_2_5"
+                "img_2_6 img_2_2 img_2_2 img_2_2 img_2_7"
+                "img_2_8 img_2_9 img_2_10 img_2_11 img_2_12";
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
 
-      .gallery-item {
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          border-radius: 0.5rem;
-          box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+        .gallery-item {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px solid #888888;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-      .gallery-item:hover {
-          transform: scale(1.02);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-      }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        }
 
-      .img_2_1 { grid-area: img_2_1; }
-      .img_2_2 { grid-area: img_2_2; }
-      .img_2_3 { grid-area: img_2_3; }
-      .img_2_4 { grid-area: img_2_4; }
-      .img_2_5 { grid-area: img_2_5; }
-      .img_2_6 { grid-area: img_2_6; }
-      .img_2_7 { grid-area: img_2_7; }
-      .img_2_8 { grid-area: img_2_8; }
-      .img_2_9 { grid-area: img_2_9; }
-      .img_2_10 { grid-area: img_2_10; }
-  </style>
+        .img_2_1 {
+            grid-area: img_2_1;
+        }
+
+        .img_2_2 {
+            grid-area: img_2_2;
+        }
+
+        .img_2_3 {
+            grid-area: img_2_3;
+        }
+
+        .img_2_4 {
+            grid-area: img_2_4;
+        }
+
+        .img_2_5 {
+            grid-area: img_2_5;
+        }
+
+        .img_2_6 {
+            grid-area: img_2_6;
+        }
+
+        .img_2_7 {
+            grid-area: img_2_7;
+        }
+
+        .img_2_8 {
+            grid-area: img_2_8;
+        }
+
+        .img_2_9 {
+            grid-area: img_2_9;
+        }
+
+        .img_2_10 {
+            grid-area: img_2_10;
+        }
+    </style>
 </head>
+
 <body class="img_2">
-  <div class="gallery3">
-    <div class="gallery-item img_2_1" style="background-image: url('design/download.jpg');"></div>
-    <div class="gallery-item img_2_2" style="background-image: url('design/download1.jpg');"></div>
-    <div class="gallery-item img_2_3" style="background-image: url('design/download2.jpg');"></div>
-    <div class="gallery-item img_2_4" style="background-image: url('design/download3.jpg');"></div>
-    <div class="gallery-item img_2_5" style="background-image: url('design/download4.jpg');"></div>
-    <div class="gallery-item img_2_6" style="background-image: url('design/download5.jpg');"></div>
-    <div class="gallery-item img_2_7" style="background-image: url('design/download12.jpg');"></div>
-    <div class="gallery-item img_2_8" style="background-image: url('design/download7.jpg');"></div>
-    <div class="gallery-item img_2_9" style="background-image: url('design/download8.jpg');"></div>
-    <div class="gallery-item img_2_10" style="background-image: url('design/download9.jpg');"></div>
-    <div class="gallery-item img_2_11" style="background-image: url('design/download10.jpg');"></div>
-    <div class="gallery-item img_2_12" style="background-image: url('design/download11.jpg');"></div>
-</div>
+    <div class="gallery3">
+        <div class="gallery-item img_2_1" style="background-image: url('design/download.jpg');"></div>
+        <div class="gallery-item img_2_2" style="background-image: url('design/download1.jpg');"></div>
+        <div class="gallery-item img_2_3" style="background-image: url('design/download2.jpg');"></div>
+        <div class="gallery-item img_2_4" style="background-image: url('design/download3.jpg');"></div>
+        <div class="gallery-item img_2_5" style="background-image: url('design/download4.jpg');"></div>
+        <div class="gallery-item img_2_6" style="background-image: url('design/download5.jpg');"></div>
+        <div class="gallery-item img_2_7" style="background-image: url('design/download12.jpg');"></div>
+        <div class="gallery-item img_2_8" style="background-image: url('design/download7.jpg');"></div>
+        <div class="gallery-item img_2_9" style="background-image: url('design/download8.jpg');"></div>
+        <div class="gallery-item img_2_10" style="background-image: url('design/download9.jpg');"></div>
+        <div class="gallery-item img_2_11" style="background-image: url('design/download10.jpg');"></div>
+        <div class="gallery-item img_2_12" style="background-image: url('design/download11.jpg');"></div>
+    </div>
 
 </body>
+
 </html>
